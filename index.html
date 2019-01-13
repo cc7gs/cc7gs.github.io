@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +13,13 @@
 <meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -97,9 +104,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -123,6 +130,16 @@
 
 
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   <title>cc的博客</title>
@@ -144,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <div class="container sidebar-position-right 
   page-home">
     <div class="headband">
       <a href="https://github.com/cc7gs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
@@ -268,7 +285,7 @@
     <link itemprop="mainEntityOfPage" href="http://ccwgs.top/2019/01/13/博客搭建流程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wu ChenChen">
+      <meta itemprop="name" content="吴 晨">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.JPG">
     </span>
@@ -332,6 +349,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/13/博客搭建流程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/13/博客搭建流程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -361,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  385
+                  1k
                 </span>
               
 
@@ -377,7 +404,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -400,35 +427,30 @@
       
         
           
-            <h1 id="关于搭建的流程"><a href="#关于搭建的流程" class="headerlink" title="关于搭建的流程"></a>关于搭建的流程</h1><ol>
-<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="noopener">http://CrazyMilk.github.io；</a></li>
-<li>创建两个分支：master 与 hexo；</li>
-<li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件；</li>
-<li>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
-<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过</a> Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
-<li>修改 ==_config.yml==中的deploy参数，分支应为master；</li>
-<li>依次执行 ==git add .、git commit -m “…”、git push origin hexo==提交网站相关的文件；</li>
-<li>执行hexo g -d生成网站并部署到GitHub上。这样一来，在GitHub上<a href="http://CrazyMilk.github.io" target="_blank" rel="noopener">http://CrazyMilk.github.io</a> 仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</li>
-</ol>
-<h1 id="关于日常的改动流程"><a href="#关于日常的改动流程" class="headerlink" title="关于日常的改动流程"></a>关于日常的改动流程</h1><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）</li>
-<li>然后才执行hexo g -d发布网站到master分支上。</li>
-</ol>
-<h1 id="其它电脑操作流程"><a href="#其它电脑操作流程" class="headerlink" title="其它电脑操作流程"></a>其它电脑操作流程</h1><ol>
-<li>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo);</li>
-<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
-</ol>
-<p><a href="&quot;https://www.zhihu.com/question/21193762/answer/79109280&quot;">原文地址</a></p>
-
-          
+          关于搭建的流程
+创建仓库，http://CrazyMilk.github.io；
+创建两个分支：master 与 hexo；
+设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件；
+使用git clone git@github.com:CrazyMilk/CrazyMilk.g
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/13/博客搭建流程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
     
     
     
-
+    
+    <div>
+      
+    </div>
+    
     
 
     
@@ -471,7 +493,7 @@
     <link itemprop="mainEntityOfPage" href="http://ccwgs.top/2019/01/13/javascript-代码简洁之道/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wu ChenChen">
+      <meta itemprop="name" content="吴 晨">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.JPG">
     </span>
@@ -534,6 +556,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/13/javascript-代码简洁之道/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/13/javascript-代码简洁之道/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -603,122 +635,28 @@
       
         
           
-            <h1 id="JavaScript-代码简洁之道"><a href="#JavaScript-代码简洁之道" class="headerlink" title="JavaScript 代码简洁之道"></a>JavaScript 代码简洁之道</h1><p><strong>本文并不是代码风格指南,而是关于代码的 ==可读性==、==复用性==、==扩展性== 探讨</strong></p>
-<p><span id="jump">目录</span><br>@[TOC]</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="用有意义且有含义的单词命名变量"><a href="#用有意义且有含义的单词命名变量" class="headerlink" title="用有意义且有含义的单词命名变量"></a>用有意义且有含义的单词命名变量</h3><p><strong>Bad:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const yyyymmdstr=moment.format(&apos;YYYY/MM/DD&apos;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> currentDate=moment().format(<span class="string">'YYYY/MM/DD'</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="保持统一"><a href="#保持统一" class="headerlink" title="保持统一"></a>保持统一</h3><p>  当一个功能在项目中不同文件夹中出现时,此时我们应该保证该命名的统一。</p>
-<p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getUserInfo()</span><br><span class="line">getClientData()</span><br><span class="line">getCustomerRecord()</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getUser()</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="每个变量都该命名"><a href="#每个变量都该命名" class="headerlink" title="每个变量都该命名"></a>每个变量都该命名</h3><p>可以使用<a href="https://github.com/danielstjules/buddy.js" target="_blank" rel="noopener">buddy.js</a>或者<br><a href="https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md" target="_blank" rel="noopener">ESLint</a>检测代码中未命名的常量</p>
-<p><strong>Bad:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(blastOff,<span class="number">864000000</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MILLISECONDS_IN_A_DAY = <span class="number">86400000</span>; </span><br><span class="line"></span><br><span class="line">setTimeout(blastOff, MILLISECONDS_IN_A_DAY);</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用有意义的变量名"><a href="#使用有意义的变量名" class="headerlink" title="使用有意义的变量名"></a>使用有意义的变量名</h3><p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> address = <span class="string">'One Infinite Loop, Cupertino 95014'</span>;</span><br><span class="line"><span class="keyword">const</span> cityZipCodeRegex = <span class="regexp">/^[^,\\]+[,\\\s]+(.+?)\s*(\d&#123;5&#125;)?$/</span>;</span><br><span class="line">saveCityZipCode(address.match(cityZipCodeRegex)[<span class="number">1</span>], address.match(cityZipCodeRegex)[<span class="number">2</span>]);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> address = <span class="string">'One Infinite Loop, Cupertino 95014'</span>;</span><br><span class="line"><span class="keyword">const</span> cityZipCodeRegex = <span class="regexp">/^[^,\\]+[,\\\s]+(.+?)\s*(\d&#123;5&#125;)?$/</span>;</span><br><span class="line"><span class="keyword">const</span> [, city, zipCode] = address.match(cityZipCodeRegex) || [];</span><br><span class="line">saveCity</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="直截了当"><a href="#直截了当" class="headerlink" title="直截了当"></a>直截了当</h3><p>避免需要通过上下文来推断的变量，显式优于隐式<br><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> locations = [<span class="string">'Austin'</span>, <span class="string">'New York'</span>, <span class="string">'San Francisco'</span>];</span><br><span class="line">locations.forEach(<span class="function">(<span class="params">l</span>) =&gt;</span> &#123;</span><br><span class="line">  doStuff();</span><br><span class="line">  doSomeOtherStuff();</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// 1 是什么?</span></span><br><span class="line">  dispatch(l);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> locations = [<span class="string">'Austin'</span>, <span class="string">'New York'</span>, <span class="string">'San Francisco'</span>];</span><br><span class="line">locations.forEach(<span class="function">(<span class="params">location</span>) =&gt;</span> &#123;</span><br><span class="line">  doStuff();</span><br><span class="line">  doSomeOtherStuff();</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  dispatch(location);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="避免重复的描述"><a href="#避免重复的描述" class="headerlink" title="避免重复的描述"></a>避免重复的描述</h3><p>当类/对象名已经有意义时，对其变量进行命名不需要再次重复。</p>
-<p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Car=&#123;</span><br><span class="line">    carMake:<span class="string">'Honda'</span>,</span><br><span class="line">    carModel:<span class="string">'Accord'</span>,</span><br><span class="line">    carColor:<span class="string">'Blue'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">painCar</span>(<span class="params">car</span>)</span>&#123;</span><br><span class="line">    car.carColor=<span class="string">'red'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Car=&#123;</span><br><span class="line">    make:<span class="string">'Honda'</span>,</span><br><span class="line">    model:<span class="string">'Accord'</span>,</span><br><span class="line">    color:<span class="string">'Blue'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">paintCar</span>(<span class="params">car</span>)</span>&#123;</span><br><span class="line">    car.color=<span class="string">'Red'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="使用默认值"><a href="#使用默认值" class="headerlink" title="使用默认值"></a>使用默认值</h3><p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMicrobrewery</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> breweryName = name || <span class="string">'Hipster Brew Co.'</span>;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMicrobrewery</span>(<span class="params">name = <span class="string">'Hipster Brew Co.'</span></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p> 理想情况下函数参数不应该超过3个,如果超过3个以上，此时我们应该通过<strong>es6解构</strong>或者将这些参数<strong>封装成一个对象</strong><br> <strong>Bad:</strong><br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params">title,body,buttonText,cancellable</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> <strong>Good:</strong><br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params">&#123;title,body,buttonText,cancellable&#125;</span>)</span>&#123;</span><br><span class="line">   <span class="comment">//....</span></span><br><span class="line"> &#125;</span><br><span class="line"> createMenu(&#123;</span><br><span class="line">   title:<span class="string">'Foo'</span>,</span><br><span class="line">   body:<span class="string">'Bar'</span>,</span><br><span class="line">   buttonText:<span class="string">'Baz'</span>,</span><br><span class="line">   cancelable:<span class="literal">true</span></span><br><span class="line"> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//参数封装对象形式</span></span><br><span class="line"><span class="keyword">var</span> menuConfig=&#123;</span><br><span class="line">    title:<span class="string">'Foo'</span>,</span><br><span class="line">   body:<span class="string">'Bar'</span>,</span><br><span class="line">   buttonText:<span class="string">'Baz'</span>,</span><br><span class="line">   cancelable:<span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params">menuConfig</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="功能单一"><a href="#功能单一" class="headerlink" title="功能单一"></a>功能单一</h3><p>这是软件功能中最重要的原则之一。</p>
-<p>功能不单一的函数将导致难以重构、测试和理解。功能单一的函数易于重构，并使代码更加干净。<br><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">emailClients</span>(<span class="params">clients</span>)</span>&#123;</span><br><span class="line">  clients.forEach(<span class="function"><span class="params">client</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> clientRecord=database.lookup(client);</span><br><span class="line">    <span class="keyword">if</span>(clientRecord.isActive())&#123;</span><br><span class="line">      email(client);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">emailClients</span>(<span class="params">clients</span>)</span>&#123;</span><br><span class="line">  clients.forEach(<span class="function"><span class="params">client</span>=&gt;</span>&#123;</span><br><span class="line">    emailClientIfNeeded(client);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">emailClientIfNeeded</span>(<span class="params">client</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isClientActive(client))&#123;</span><br><span class="line">        email(client);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isClientActive</span>(<span class="params">client</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> clientRecord=database.lookup(client);</span><br><span class="line">  <span class="keyword">return</span> clientRecord.isActive(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="函数名表明其功能"><a href="#函数名表明其功能" class="headerlink" title="函数名表明其功能"></a>函数名表明其功能</h3><p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addToDate</span>(<span class="params">date, month</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// It's hard to tell from the function name what is added</span></span><br><span class="line">addToDate(date, <span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addMonthToDate</span>(<span class="params">month, date</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">addMonthToDate(<span class="number">1</span>, date);</span><br></pre></td></tr></table></figure></p>
-<h3 id="函数应该只做一层抽象"><a href="#函数应该只做一层抽象" class="headerlink" title="函数应该只做一层抽象"></a>函数应该只做一层抽象</h3><p>当函数需要的抽象多于一层时通常意味着函数功能过于复杂，需要将其进行分解以提高其可重用性和可测试性。</p>
-<p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseBatterJsAlternative</span>(<span class="params">code</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span>  REGEXES=[</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  ];</span><br><span class="line">  <span class="keyword">const</span> statements=code.split(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">const</span> tokens=[];</span><br><span class="line">  REGEXES.forEach(<span class="function">(<span class="params">REGEX</span>)=&gt;</span>&#123;</span><br><span class="line">     statements.forEach(<span class="function">(<span class="params">statements</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="comment">//...</span></span><br><span class="line">     &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">const</span> ast=[];</span><br><span class="line">  tokens.forEach(<span class="function">(<span class="params">token</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//let...</span></span><br><span class="line">  &#125;);</span><br><span class="line">  ast.forEach(<span class="function">(<span class="params">node</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseBetterJSAlternative</span>(<span class="params">code</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> tokens = tokenize(code);</span><br><span class="line">  <span class="keyword">const</span> ast = lexer(tokens);</span><br><span class="line">  ast.forEach(<span class="function">(<span class="params">node</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// parse...</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tokenize</span>(<span class="params">code</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> REGEXES = [</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> statements = code.split(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">const</span> tokens = [];</span><br><span class="line">  REGEXES.forEach(<span class="function">(<span class="params">REGEX</span>) =&gt;</span> &#123;</span><br><span class="line">    statements.forEach(<span class="function">(<span class="params">statement</span>) =&gt;</span> &#123;</span><br><span class="line">      tokens.push( <span class="comment">/* ... */</span> );</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> tokens;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lexer</span>(<span class="params">tokens</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> ast = [];</span><br><span class="line">  tokens.forEach(<span class="function">(<span class="params">token</span>) =&gt;</span> &#123;</span><br><span class="line">    ast.push( <span class="comment">/* ... */</span> );</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ast;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="删除重复代码"><a href="#删除重复代码" class="headerlink" title="删除重复代码"></a>删除重复代码</h3><p>很多时候在一个函数中由于一两点的不同，让我们去重新写一个函数。<br>要想优化重复代码需要有较强的抽象能力，错误的抽象还不如重复代码。所以在抽象过程中必须要遵循 <a href="#SOLID">SOLID</a> 原则<br><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showDeveloperList</span>(<span class="params">developers</span>) </span>&#123;</span><br><span class="line">  developers.forEach(<span class="function">(<span class="params">developer</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> expectedSalary = developer.calculateExpectedSalary();</span><br><span class="line">    <span class="keyword">const</span> experience = developer.getExperience();</span><br><span class="line">    <span class="keyword">const</span> githubLink = developer.getGithubLink();</span><br><span class="line">    <span class="keyword">const</span> data = &#123;</span><br><span class="line">      expectedSalary,</span><br><span class="line">      experience,</span><br><span class="line">      githubLink</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    render(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showManagerList</span>(<span class="params">managers</span>) </span>&#123;</span><br><span class="line">  managers.forEach(<span class="function">(<span class="params">manager</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> expectedSalary = manager.calculateExpectedSalary();</span><br><span class="line">    <span class="keyword">const</span> experience = manager.getExperience();</span><br><span class="line">    <span class="keyword">const</span> portfolio = manager.getMBAProjects();</span><br><span class="line">    <span class="keyword">const</span> data = &#123;</span><br><span class="line">      expectedSalary,</span><br><span class="line">      experience,</span><br><span class="line">      portfolio</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    render(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showEmployeeList</span>(<span class="params">employees</span>) </span>&#123;</span><br><span class="line">  employees.forEach(<span class="function">(<span class="params">employee</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> expectedSalary = employee.calculateExpectedSalary();</span><br><span class="line">    <span class="keyword">const</span> experience = employee.getExperience();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> data = &#123;</span><br><span class="line">      expectedSalary,</span><br><span class="line">      experience</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (employee.type) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'manager'</span>:</span><br><span class="line">        data.portfolio = employee.getMBAProjects();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'developer'</span>:</span><br><span class="line">        data.githubLink = employee.getGithubLink();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="使用OBject-assign-设置默认属性"><a href="#使用OBject-assign-设置默认属性" class="headerlink" title="使用OBject.assign 设置默认属性"></a>使用OBject.assign 设置默认属性</h3><p><strong>Bad:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> menuConfig=&#123;</span><br><span class="line">  title:<span class="literal">null</span>,</span><br><span class="line">  body:<span class="string">'Bar'</span>,</span><br><span class="line">  buttonText:<span class="literal">null</span>,</span><br><span class="line">  cancellable:<span class="literal">true</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">    config.title=config.title||<span class="string">'Foo'</span>;</span><br><span class="line">    config.body = config.body || <span class="string">'Bar'</span>;</span><br><span class="line">    config.buttonText = config.buttonText || <span class="string">'Baz'</span>;</span><br><span class="line">    config.cancellable = config.cancellable !== <span class="literal">undefined</span> ? config.cancellable : <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line">createMenu(menuConfig);</span><br></pre></td></tr></table></figure>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> menuConfig=&#123;</span><br><span class="line">  title:<span class="string">'Order'</span>,</span><br><span class="line">  <span class="comment">//body key 缺失</span></span><br><span class="line">  buttonText:<span class="string">'Send'</span>,</span><br><span class="line">  cancellable:<span class="literal">true</span></span><br><span class="line">&#125;;</span><br><span class="line">unction createMenu(config)&#123;</span><br><span class="line">    config=<span class="built_in">Object</span>.assign(&#123;</span><br><span class="line">      title: <span class="string">'Foo'</span>,</span><br><span class="line">      body: <span class="string">'Bar'</span>,</span><br><span class="line">      buttonText: <span class="string">'Baz'</span>,</span><br><span class="line">     cancellable: <span class="literal">true</span></span><br><span class="line">    &#125;,config);</span><br><span class="line">    <span class="comment">//config 变成:&#123;title:'Order',body:'Bar',buttonText:'Send',cancelable:true&#125;</span></span><br><span class="line">&#125;;</span><br><span class="line">createMenu(menuConfig);</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="不要用flag作为参数"><a href="#不要用flag作为参数" class="headerlink" title="不要用flag作为参数"></a>不要用flag作为参数</h3><p>通过 flag的true或false,来判读执行逻辑，违反了一个函数干一件事的原则，因此要拆分该函数。</p>
-<p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFile</span>(<span class="params">name, temp</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (temp) &#123;</span><br><span class="line">    fs.create(<span class="string">`./temp/<span class="subst">$&#123;name&#125;</span>`</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    fs.create(name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFile</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  fs.create(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createTempFile</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  createFile(<span class="string">`./temp/<span class="subst">$&#123;name&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="避免副作用（第一部分）"><a href="#避免副作用（第一部分）" class="headerlink" title="避免副作用（第一部分）"></a>避免副作用（第一部分）</h3><p> 函数接受一个值返回一个新值，除此之外的行为我们都称为副作用，比如修改全局变量、对文件进行IO操作等。</p>
-<p> 当函数确定需要副作用时，请不要用多个函数/类进行文件操作，有且仅用一个函数/类来处理。</p>
-<p> 副作用的三大天坑：随意修改可变数据类型、随意分享没有数据结构的状态、没有在统一地方处理副作用。</p>
-<p> <strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局变量被一个函数引用</span></span><br><span class="line"><span class="comment">// 现在这个变量从字符串变成了数组，如果有其他的函数引用，会发生无法预见的错误。</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'Ryan McDermott'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">splitIntoFirstAndLastName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//变成了数组，此时会有不可预测的错误</span></span><br><span class="line">  name = name.split(<span class="string">' '</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">splitIntoFirstAndLastName();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">// ['Ryan', 'McDermott'];</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">splitIntoFirstAndLastName</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> name.split(<span class="string">' '</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">'Ryan McDermott'</span>;</span><br><span class="line"><span class="keyword">const</span> newName = splitIntoFirstAndLastName(name);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">// 'Ryan McDermott';</span></span><br><span class="line"><span class="built_in">console</span>.log(newName); <span class="comment">// ['Ryan', 'McDermott'];</span></span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="避免副作用（第二部分）"><a href="#避免副作用（第二部分）" class="headerlink" title="避免副作用（第二部分）"></a>避免副作用（第二部分）</h3><p>在 JavaScript中,基本类型通过赋值传递,对象和数组通过引用传递.以引用传递为例：<br>假如我们写一个购物车，通过 <code>addItemToCart()</code> 方法添加商品到购物车，修改<code>cart</code>数组。此时调用<code>purchase()</code>方法购买，由于引用传递,获取的购物车数组 正好是最新的数据。</p>
-<p>那么我们来看一种坏情况:<br>  用户点击购买时,该按钮调用<code>purchase()</code>功能产生网络请求并将<code>cart</code>数组数据发送到服务器。因为糟糕的网络连接，<code>purchase()</code>功能必须继续重试请求。现在用户又继续添加新的商品,这时网络恢复，那么<code>purchase()</code>方法获取到的<code>cart</code>数组就是错误的。</p>
-<p>  为了避免这种问题,我们需要每次新增商品时,克隆<code>cart</code>数组并返回新的数组。<br><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> addItemToCart = <span class="function">(<span class="params">cart, item</span>) =&gt;</span> &#123;</span><br><span class="line">  cart.push(&#123; item, <span class="attr">date</span>: <span class="built_in">Date</span>.now() &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> addItemToCart = <span class="function">(<span class="params">cart, item</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> [...cart, &#123; item, <span class="attr">date</span>: <span class="built_in">Date</span>.now() &#125;];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="不要全局函数"><a href="#不要全局函数" class="headerlink" title="不要全局函数"></a>不要全局函数</h3><p>在 JS 中污染全局是一个非常不好的实践，这么做可能和其他库起冲突。</p>
-<p>想象以下例子：如果你想扩展 JS 中的<code>Array</code>，为其添加一个 <code>diff</code> 函数显示两个数组间的差异，此时应如何去做？你可以将<code>diff</code> 写入 <code>Array.prototype</code>，但这么做会和其他有类似需求的库造成冲突。如果另一个库对 <code>diff</code> 的需求为比较一个数组中首尾元素间的差异呢？</p>
-<p>使用 ES6 中的 class 对全局的 Array 做简单的扩展显然是一个更棒的选择。</p>
-<p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.diff = <span class="function"><span class="keyword">function</span> <span class="title">diff</span>(<span class="params">comparisonArray</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> hash = <span class="keyword">new</span> <span class="built_in">Set</span>(comparisonArray);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.filter(<span class="function"><span class="params">elem</span> =&gt;</span> !hash.has(elem));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperArray</span> <span class="keyword">extends</span> <span class="title">Array</span> </span>&#123;</span><br><span class="line">  diff(comparisonArray) &#123;</span><br><span class="line">    <span class="keyword">const</span> hash = <span class="keyword">new</span> <span class="built_in">Set</span>(comparisonArray);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.filter(<span class="function"><span class="params">elem</span> =&gt;</span> !hash.has(elem));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="采用函数式编程"><a href="#采用函数式编程" class="headerlink" title="采用函数式编程"></a>采用函数式编程</h3><p> 函数式的编程具有更干净且便于测试的特点,尽可能使用这种风格。</p>
-<p> <strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> programmerOutput = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'Uncle Bobby'</span>,</span><br><span class="line">    linesOfCode: <span class="number">500</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'Suzie Q'</span>,</span><br><span class="line">    linesOfCode: <span class="number">1500</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'Jimmy Gosling'</span>,</span><br><span class="line">    linesOfCode: <span class="number">150</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'Gracie Hopper'</span>,</span><br><span class="line">    linesOfCode: <span class="number">1000</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> totalOutput = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; programmerOutput.length; i++) &#123;</span><br><span class="line">  totalOutput += programmerOutput[i].linesOfCode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> programmerOutput = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'Uncle Bobby'</span>,</span><br><span class="line">    linesOfCode: <span class="number">500</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'Suzie Q'</span>,</span><br><span class="line">    linesOfCode: <span class="number">1500</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'Jimmy Gosling'</span>,</span><br><span class="line">    linesOfCode: <span class="number">150</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'Gracie Hopper'</span>,</span><br><span class="line">    linesOfCode: <span class="number">1000</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> totalOutput = programmerOutput</span><br><span class="line">  .map(<span class="function"><span class="params">output</span> =&gt;</span> output.linesOfCode)</span><br><span class="line">  .reduce(<span class="function">(<span class="params">totalLines, lines</span>) =&gt;</span> totalLines + lines,<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="封装条件语句"><a href="#封装条件语句" class="headerlink" title="封装条件语句"></a>封装条件语句</h3><p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (fsm.state === <span class="string">'fetching'</span> &amp;&amp; isEmpty(listNode)) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shouldShowSpinner</span>(<span class="params">fsm, listNode</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> fsm.state === <span class="string">'fetching'</span> &amp;&amp; isEmpty(listNode);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (shouldShowSpinner(fsmInstance, listNodeInstance)) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="尽量别”否定情况”"><a href="#尽量别”否定情况”" class="headerlink" title="尽量别”否定情况”"></a>尽量别”否定情况”</h3><p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isDOMNodeNotPresent</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!isDOMNodeNotPresent(node)) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isDOMNodePresent</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (isDOMNodePresent(node)) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="避免条件判断"><a href="#避免条件判断" class="headerlink" title="避免条件判断"></a>避免条件判断</h3><p>这看起来似乎不太可能。</p>
-<p>大多人听到这的第一反应是：“怎么可能不用 if 完成其他功能呢？”许多情况下通过使用多态(polymorphism)可以达到同样的目的。</p>
-<p>第二个问题在于采用这种方式的原因是什么。答案是我们之前提到过的：保持函数功能的单一性。<br><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Airplane</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  getCruisingAltitude() &#123;</span><br><span class="line">    <span class="keyword">switch</span> (<span class="keyword">this</span>.type) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'777'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getMaxAltitude() - <span class="keyword">this</span>.getPassengerCount();</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'Air Force One'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getMaxAltitude();</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'Cessna'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.getMaxAltitude() - <span class="keyword">this</span>.getFuelExpenditure();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Airplane</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Boeing777</span> <span class="keyword">extends</span> <span class="title">Airplane</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  getCruisingAltitude() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getMaxAltitude() - <span class="keyword">this</span>.getPassengerCount();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AirForceOne</span> <span class="keyword">extends</span> <span class="title">Airplane</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  getCruisingAltitude() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getMaxAltitude();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cessna</span> <span class="keyword">extends</span> <span class="title">Airplane</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  getCruisingAltitude() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getMaxAltitude() - <span class="keyword">this</span>.getFuelExpenditure();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="避免类型判断-第一部分"><a href="#避免类型判断-第一部分" class="headerlink" title="避免类型判断(第一部分)"></a>避免类型判断(第一部分)</h3><p>JS 是弱类型语言,这意味着函数可接受任意类型的参数。<br>有时候会给我们带来麻烦，我们就会用类型判读类避免这些情况发生。仔细想想是你真的需要检查类型还是你的 API 设计有问题？</p>
-<p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">travelToTexas</span>(<span class="params">vehicle</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (vehicle <span class="keyword">instanceof</span> Bicycle) &#123;</span><br><span class="line">    vehicle.pedal(<span class="keyword">this</span>.currentLocation, <span class="keyword">new</span> Location(<span class="string">'texas'</span>));</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (vehicle <span class="keyword">instanceof</span> Car) &#123;</span><br><span class="line">    vehicle.drive(<span class="keyword">this</span>.currentLocation, <span class="keyword">new</span> Location(<span class="string">'texas'</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">travelToTexas</span>(<span class="params">vehicle</span>) </span>&#123;</span><br><span class="line">  vehicle.move(<span class="keyword">this</span>.currentLocation, <span class="keyword">new</span> Location(<span class="string">'texas'</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="避免类型判读-第二部分"><a href="#避免类型判读-第二部分" class="headerlink" title="避免类型判读(第二部分)"></a>避免类型判读(第二部分)</h3><p>如果你需要做静态类型检查，比如字符串、整数等，推荐使用 TypeScript，不然你的代码会变得又臭又长。<br><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">combine</span>(<span class="params">val1, val2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> val1 === <span class="string">'number'</span> &amp;&amp; <span class="keyword">typeof</span> val2 === <span class="string">'number'</span> ||</span><br><span class="line">      <span class="keyword">typeof</span> val1 === <span class="string">'string'</span> &amp;&amp; <span class="keyword">typeof</span> val2 === <span class="string">'string'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> val1 + val2;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Must be of type String or Number'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">combine</span>(<span class="params">val1, val2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> val1 + val2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<h3 id="避免过度优化"><a href="#避免过度优化" class="headerlink" title="避免过度优化"></a>避免过度优化</h3><p>现代的浏览器在运行时会对代码自动进行优化。有时人为对代码进行优化可能是在浪费时间。这里可以找到许多真正需要优化的地方<a href="https://github.com/petkaantonov/bluebird/wiki/Optimization-killers" target="_blank" rel="noopener">点击这里</a><br><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 这里使用变量len是因为在老式浏览器中，</span></span><br><span class="line"><span class="comment">// 直接使用正例中的方式会导致每次循环均重复计算list.length的值，</span></span><br><span class="line"><span class="comment">// 现代浏览器已对此做了优化。</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = list.length; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="删除无效代码"><a href="#删除无效代码" class="headerlink" title="删除无效代码"></a>删除无效代码</h3><p>不再被调用的代码应及时删除。</p>
-<p><strong>Bad:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">oldRequestModule</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newRequestModule</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> req = newRequestModule;</span><br><span class="line">inventoryTracker(<span class="string">'apples'</span>, req, <span class="string">'www.inventory-awesome.io'</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Good:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newRequestModule</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> req = newRequestModule;</span><br><span class="line">inventoryTracker(<span class="string">'apples'</span>, req, <span class="string">'www.inventory-awesome.io'</span>);</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="#jump">回到顶部</a></strong></p>
-<p><strong>完成进度</strong></p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 变量</li>
-<li style="list-style: none"><input type="checkbox" checked> 函数</li>
-<li style="list-style: none"><input type="checkbox"> 对象和数据结构</li>
-<li style="list-style: none"><input type="checkbox"> 类</li>
-<li style="list-style: none"><input type="checkbox"> SOLD</li>
-<li style="list-style: none"><input type="checkbox"> 测试</li>
-<li style="list-style: none"><input type="checkbox"> 异步</li>
-<li style="list-style: none"><input type="checkbox"> 错误处理</li>
-<li style="list-style: none"><input type="checkbox"> 代码风格</li>
-<li style="list-style: none"><input type="checkbox"> 注释</li>
-</ul>
-<p>参考如下:<br> <a href="https://github.com/ryanmcdermott" target="_blank" rel="noopener">ryanmcdermott</a>的 <a href="https://github.com/ryanmcdermott/clean-code-javascript" target="_blank" rel="noopener">《clearn-code-javascript》</a></p>
-<p><a href="https://github.com/alivebao" target="_blank" rel="noopener">alivebao</a> 翻译的<a href="https://github.com/alivebao/clean-code-js" target="_blank" rel="noopener">https://github.com/alivebao/clean-code-js</a></p>
-<p>书写该文章只是为了自己对知识点的梳理，本文都是通过mardown自己手打，如有错误请指正</p>
-
-          
+          JavaScript 代码简洁之道本文并不是代码风格指南,而是关于代码的 ==可读性==、==复用性==、==扩展性== 探讨
+目录@[TOC]
+变量用有意义且有含义的单词命名变量Bad:1const yyyymmdstr=moment.format(&apos;YYYY/MM/DD&apos;);
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/13/javascript-代码简洁之道/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
     
     
     
-
+    
+    <div>
+      
+    </div>
+    
     
 
     
@@ -780,9 +718,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/uploads/me.JPG" alt="Wu ChenChen">
+              <img class="site-author-image" itemprop="image" src="/uploads/me.JPG" alt="吴 晨">
             
-              <p class="site-author-name" itemprop="name">Wu ChenChen</p>
+              <p class="site-author-name" itemprop="name">吴 晨</p>
               <p class="site-description motion-element" itemprop="description">一个平凡的前端开发者,一直在努力让自己变得更强,希望会遇到更多志同道合的朋友。</p>
           </div>
 
@@ -826,6 +764,22 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/cc7gs" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:chenorange12@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -856,7 +810,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Wu ChenChen</span>
+  <span class="author" itemprop="copyrightHolder">Design by 吴晨个人博客 陕ICP备18013227号-1</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -866,7 +820,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.3k</span>
+    <span title="Site words total count">3.9k</span>
   
 </div>
 
@@ -876,8 +830,6 @@
 
 
 
-
-  <div class="footer-custom">Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a></div>
 
 
         
@@ -982,6 +934,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
   
 
   
@@ -1021,6 +980,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1pRco1L7dfyy7UNdYa31qnj8-gzGzoHsz',
+        appKey: 'hJ8aXyYeDPAocw9VOa37kKn3',
+        placeholder: '大家可以畅所欲言...',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
@@ -1149,6 +1130,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
 
   
 

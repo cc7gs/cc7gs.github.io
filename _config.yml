@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: cc的博客
+title: cc的博客 
 subtitle: Talking is cheap，show me a code
 description: 一个平凡的前端开发者,一直在努力让自己变得更强,希望会遇到更多志同道合的朋友。
 keywords: 前端开发 nodeJs React 
@@ -28,7 +28,8 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
     - README.md
-    - CNAME
+    - google19583183dd990607.html
+    - baidu-verify-82978D02E8.txt
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post

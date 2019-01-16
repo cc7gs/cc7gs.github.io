@@ -3,6 +3,7 @@ title: javascript 代码简洁之道
 date: 2019-01-13 02:33:14
 tags: js代码优化
 category: js提升
+top: 11
 ---
 # JavaScript 代码简洁之道
 

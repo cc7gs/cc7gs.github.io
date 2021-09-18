@@ -4,6 +4,6 @@ To run locally, yarn, then yarn dev, then open https://localhost:8000.
 
 # my Project
 
-[晨风空间](https://wccmw.xyz/FE_note)
+[晨风空间](https://blog.wccmw.xyz/)
 
 [About me](https://wccmw.xyz)
